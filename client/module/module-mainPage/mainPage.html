@@ -1,0 +1,57 @@
+<div class="myPage" style="width: 100%;height: 100%;">
+    <div class="header" ng-controller="indexCtrl">
+        <img class="title_logo" src="client/global/img/mainPage/logo.svg">
+        <img class="name_loge" src="client/global/img/mainPage/avatar.jpg">
+    </div>
+    <!--引导栏-->
+    <div class="myContent">
+        <div ng-cloak class="left-side" ng-controller="navCtrl">
+            <div class="content-box sidebar">
+                <ul class="nav">
+                    <li>
+                        <ul ng-click="switchNav($event, 'DASHBOARD')" class="navDetail">
+                            <li>
+                                <a ui-sref="mainPage.dashboard" ng-class="{'switch': !sliderSwitch, 'nav-select': currentNavSelected =='DASHBOARD'}">
+                                    <img width="20" style="vertical-align: middle;margin-bottom: 5px;" src="client/global/img/mainPage/dashboard.svg"/>
+                                    <span style="margin-left:10px">DASHBOARD</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul ng-click="switchNav($event, 'AGENT')" class="navDetail">
+                            <li>
+                                <a ui-sref="mainPage.agent" ng-class="{'switch': !sliderSwitch, 'nav-select': currentNavSelected =='AGENT'}">
+                                    <img width="20" style="vertical-align: middle;margin-bottom: 5px;" src="client/global/img/mainPage/agent.svg"/>
+                                    <span style="margin-left:10px">AGENT</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul ng-click="switchNav($event, 'MY_CRUISE')" class="navDetail">
+                            <li>
+                                <a ui-sref="mainPage.myCruise" ng-class="{'switch': !sliderSwitch, 'nav-select': currentNavSelected =='MY_CRUISE'}">
+                                    <img width="20" style="vertical-align: middle;margin-bottom: 5px;" src="client/global/img/mainPage/myCruise.svg"/>
+                                    <span style="margin-left:10px">MY CRUISE</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <ul ng-click="switchNav($event, 'HELP')" class="navDetail">
+                            <li>
+                                <a ui-sref="mainPage.help" ng-class="{'switch': !sliderSwitch, 'nav-select': currentNavSelected =='HELP'}">
+                                    <img width="20" style="vertical-align: middle;margin-bottom: 5px;" src="client/global/img/mainPage/help.svg"/>
+                                    <span style="margin-left:10px">HELP</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="view-box">
+            <div ui-view="mainView" class="mainView"></div>
+        </div>
+    </div>
+
+</div>
