@@ -98,21 +98,28 @@
 .os_name_ico{
     display: inline-block;
     line-height: 50px;
-    width: 50px;
     text-align: center;
 }
-.os_state{
+.os_state_build{
     width:10%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content:center;
     text-align: center;
+
 }
-.os_state > div{
-    height: 25px;
+.os_state_build > div{
+    font-size: 10px;
+    height: 14px;
     color: #FFFFFF;
     padding: 0 5px 0 5px;
+
+}
+.osStateIdle{
+    background-color: #7fbc39;
+}
+.osStateBuild{
     background-color: #ff9a2a;
 }
 .os_ip{
@@ -123,6 +130,38 @@
     width: 25%;
     height: 100%;
 }
+.os_resource{
+    display: flex;
+    align-items: center;
+    width: 85%;
+}
+.os_list,.os_deny{
+    height: 30px;
+    padding: 0 8px;
+    background-color: #efefef;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+}
+.os_list > img{
+    cursor: pointer;
+    margin-left: 5px;
+}
+.os_list > span{
+    color: #2D4054;
+}
+.os_deny_state{
+    display: flex;
+    align-items: center;
+}
+.os_deny{
+    background-color: #00b4cf;
+    color: #FFFFFF;
+}
+.os_deny > span {
+    margin: 0 10px;
+}
+
 
 /*齿轮旋转 start*/
 @keyframes rotating{
@@ -139,3 +178,26 @@
     opacity: 0.15;
 }
 /*齿轮旋转 end*/
+
+.addButton {
+    background-color:#00b4cf;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-size:18px;
+    font-weight:bold;
+    padding:3px 8px;
+    text-decoration:none;
+}
+.addButton:hover {
+    background-color:#01869a;
+}
+.addButton:active {
+    position:relative;
+    top:1px;
+}
+/*tab*/
+.osTab{
+    width: 30%;
+    height: 100%;
+}

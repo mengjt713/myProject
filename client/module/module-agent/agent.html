@@ -27,42 +27,60 @@
         </div>
     </div>
     <!--tab-->
-    <div class="agentTab"></div>
+    <div class="agentTab">
+        <div class="osTab">
+            <ul class="menuTab">
+                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[curSelectTab=='all']" ng-click="queryOs('all')">All</li>
+                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[curSelectTab=='physical']" ng-click="queryOs('physical')">Physical</li>
+                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[curSelectTab=='virtual']" ng-click="queryOs('virtual')">Virtual</li>
+            </ul>
+        </div>
+
+    </div>
     <!--内容项-->
-    <div class="agentTable">
-        <div class="agentInfo">
+    <div class="agentTable scrollList">
+        <div class="agentInfo" ng-repeat="osItem in osList track by osItem.id">
             <div class="os_ico">
-                <img src="client/global/img/agent/windows.png">
+                <img style="vertical-align: middle;" src="{{'client/global/img/agent/' + osItem.os + '.png'}}">
             </div>
             <div class="os_info">
                 <div class="up_info">
                     <div class="os_name">
                         <div class="os_name_ico">
-                            <img width="24px" src="client/global/img/agent/computer.png">
+                            <img style="vertical-align: middle;" width="16px" src="client/global/img/agent/computer.png">
                         </div>
-                        <span>sdaasdasdasd</span>
+                        <span>{{osItem.name}}</span>
                     </div>
-                    <div class="os_state">
-                        <div>building</div>
+                    <div class="os_state_build" >
+                        <div ng-class="{true:'osStateIdle',false:'osStateBuild'}[osItem.status == 'idle']">{{osItem.status}}</div>
                     </div>
                     <div class="os_ip">
                         <div class="os_name_ico">
-                            <img width="24px" src="client/global/img/agent/ip.png">
+                            <img style="vertical-align: middle;" width="16px" src="client/global/img/agent/ip.png">
                         </div>
-                        <span>192.168.0.1</span>
+                        <span>{{osItem.ip}}</span>
                     </div>
                     <div class="os_location">
                         <div class="os_name_ico">
-                            <img width="24px" src="client/global/img/agent/file.png">
+                            <img style="vertical-align: middle;" width="16px" src="client/global/img/agent/file.png">
                         </div>
-                        <span>Sssss/ss/ss/ss</span>
+                        <span>{{osItem.location}}</span>
                     </div>
                 </div>
                 <div class="down_info">
                     <div class="os_resource">
-
+                        <a href="#" class="addButton" ng-click="addResource()">+</a>
+                        <div class="os_list" ng-repeat="osName in osItem.resources">
+                            <span>{{osName}}</span>
+                            <img src="client/global/img/agent/deleteBtn.png">
+                        </div>
                     </div>
-                    <div class="os_deny_state"></div>
+                    <div class="os_deny_state" ng-show="osItem.status =='building'">
+                        <div class="os_deny">
+                            <img src="client/global/img/agent/denyBtn.png">
+                            <span>Deny</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

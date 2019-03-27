@@ -35,7 +35,6 @@
 
 .view-box {
     flex:1;
-    background: #fff;
 }
 
 .header {
@@ -58,8 +57,10 @@
     height: 40px;
     padding: 2px;
     position: absolute;
+    top:50%;
     right: 5%;
     border-radius:20px;
+    transform: translateY(-50%);
 }
 
 .myContent{
@@ -71,9 +72,7 @@
 
 /**页面结构end**/
 .mainView {
-    position: relative;
     height: 100%;
-    width: 100%;
     padding: 15px;
     background-color: #F3F3F3;
 }
