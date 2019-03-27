@@ -10,12 +10,12 @@ define(['app'],function(myApp){
             $("#promt-modal").css('z-index',9999);
 			$("#promt-modal").modal("show");
 		};
-		
+
 		var _showConfirm = function(){
             $("#confirm-modal").css('z-index',9999);
 			$("#confirm-modal").modal("show");
 		};
-		
+
         /**
 		 * 提示消息框
          * @param msg 消息

@@ -30,16 +30,16 @@
     <div class="agentTab">
         <div class="osTab">
             <ul class="menuTab">
-                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[curSelectTab=='all']" ng-click="queryOs('all')">All</li>
-                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[curSelectTab=='physical']" ng-click="queryOs('physical')">Physical</li>
-                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[curSelectTab=='virtual']" ng-click="queryOs('virtual')">Virtual</li>
+                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[osHandle.curSelectTab=='all']" ng-click="osHandle.queryOs('all')">All</li>
+                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[osHandle.curSelectTab=='physical']" ng-click="osHandle.queryOs('physical')">Physical</li>
+                <li ng-class="{true:'selectedSlider',false:'unselectedSlider'}[osHandle.curSelectTab=='virtual']" ng-click="osHandle.queryOs('virtual')">Virtual</li>
             </ul>
         </div>
 
     </div>
     <!--内容项-->
     <div class="agentTable scrollList">
-        <div class="agentInfo" ng-repeat="osItem in osList track by osItem.id">
+        <div class="agentInfo" ng-repeat="osItem in osHandle.osList track by osItem.id">
             <div class="os_ico">
                 <img style="vertical-align: middle;" src="{{'client/global/img/agent/' + osItem.os + '.png'}}">
             </div>
