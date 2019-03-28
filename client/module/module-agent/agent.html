@@ -4,25 +4,25 @@
         <div class="data1">
             <div class="name"><span>Building</span></div>
             <img class="buildState" src="client/global/img/agent/build.svg">
-            <div class="number"><span>5</span></div>
+            <div class="number"><span>{{osHandle.buildNum}}</span></div>
         </div>
         <div class="data2">
             <div class="name"><span>Idle</span></div>
             <img class="idleState" src="client/global/img/agent/idle.svg">
-            <div class="number"><span>5</span></div>
+            <div class="number"><span>{{osHandle.idleNum}}</span></div>
         </div>
         <div class="data3">
             <div class="info">
                 <div class="upName">ALL</div>
-                <div class="downData">10</div>
+                <div class="downData">{{osHandle.physicalNum + osHandle.virtualNum}}</div>
             </div>
             <div class="info">
                 <div class="upName">PHYSICAL</div>
-                <div class="downData">5</div>
+                <div class="downData">{{osHandle.physicalNum}}</div>
             </div>
             <div class="info">
                 <div class="upName">VIRTUAL</div>
-                <div class="downData">5</div>
+                <div class="downData">{{osHandle.virtualNum}}</div>
             </div>
         </div>
     </div>

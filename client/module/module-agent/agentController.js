@@ -3,6 +3,10 @@ define(["app"], function(myApp) {
         $scope.osHandle = {
             curSelectTab:"all",
             osList:[],
+            physicalNum:0,
+            virtualNum:0,
+            buildNum:0,
+            idleNum:0,
             queryOs:function(type){
                 let that = this;
                 that.curSelectTab = type;
@@ -18,6 +22,12 @@ define(["app"], function(myApp) {
                     onSuccess: function(response){
                         if(response){
                             that.osList = response;
+                            if(type=='all'){
+                                that.virtualNum = myFilter(that.osList,'type','virtual').length;
+                                that.physicalNum = myFilter(that.osList,'type','physical').length;
+                                that.buildNum = myFilter(that.osList,'status','building').length;
+                                that.idleNum = myFilter(that.osList,'status','idle').length;
+                            }
                         }
                     },
                     onError: function(response){
@@ -27,6 +37,12 @@ define(["app"], function(myApp) {
             }
         };
         $scope.osHandle.getOsByType('all');
+
+        function myFilter(list,type,value){
+            return list.filter(function (item) {
+                return item[type] ==value
+            })
+        }
 
     })
 })
