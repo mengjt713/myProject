@@ -44,6 +44,14 @@
     background: #fafafa;
     position: relative;
 }
+.footer{
+    width: 100%;
+    height: 20px;
+    background: #fafafa;
+    text-align: center;
+    position: relative;
+    font-size:14px;
+}
 
 .title_logo {
     height: 40px;
@@ -64,7 +72,7 @@
 }
 
 .myContent{
-    height: calc(100% - 60px);
+    height: calc(100% - 80px);
     display: flex;
     max-width:1200px;
     margin:0 auto;
@@ -74,7 +82,6 @@
 .mainView {
     height: 100%;
     padding: 15px;
-    background-color: #F3F3F3;
 }
 
 

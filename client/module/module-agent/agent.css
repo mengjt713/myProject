@@ -201,3 +201,74 @@
     width: 30%;
     height: 100%;
 }
+
+/*模态框*/
+.myModal{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(0,0,0,0.5);
+}
+@-webkit-keyframes zoom{
+    from {-webkit-transform: scale(0)}
+    to {-webkit-transform: scale(1)}
+}
+@keyframes zoom{
+    from {transform: scale(0)}
+    to {transform: scale(1)}
+}
+.modal-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal-dialog{
+    padding: 10px;
+    width: 570px;
+    max-height: 200px;
+    background-color:#fff;
+    border: 1px solid #00b4cf;
+    -webkit-animation: zoom 0.6s;
+    animation: zoom 0.6s;
+}
+.modal-header{
+    width: 100%;
+    height:30px;
+    line-height: 30px;
+}
+.modal-header > img{
+    float:right;
+}
+.modal-title{
+    font-size:14px;
+}
+.modal-body{
+    width: 100%;
+    height:50px;
+}
+.modal-body > input{
+    width: 100%;
+    height: 24px;
+}
+.modal-footer{
+    width: 100%;
+    height: 30px;
+}
+.add_resouce{
+    font-size:14px;
+    font-weight: normal;
+}
+.cancel{
+    font-size:14px;
+    font-weight: normal;
+    background-color: #435466;
+}
+.cancel:hover{
+    background-color:#2d4054;
+}

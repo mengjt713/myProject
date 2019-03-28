@@ -7,6 +7,23 @@
 </head>
 <body>
     <div class="main-contain" ui-view="mainContain"></div>
+
+    <div class="popWindow" id="popWindow">
+        <table style="width:100%;line-height:22px;" cellspacing="0" cellpadding="0">
+            <tr style="background-color:#075E8B;">
+                <td style="color:white;font-family:bolder;font-size:10pt;" id="titleTd">新窗口-东哥的标题</td>
+                <td style="color:#EBEBEB;font-weight:bolder;width:20px;">
+                    <img src="action_delete.png" style="width:16px;height:16px;" title="关闭" onclick="popWindowHide()"/>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2>
+                    <iframe frameborder="0" width="100%" id="popFrame"></iframe>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="popWindowBg"></div>
 </body>
 <script type="text/javascript" src="client/global/lib/require/require.min.js" data-main="client/global/main"></script>
 </html>

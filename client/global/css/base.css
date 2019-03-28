@@ -12,36 +12,8 @@ li {
     margin: 0;
     padding: 0;
 }
-/**错误提示**/
-.error {
-    color: red;
-}
-
-.t-fff {
-    color: #FFFFFF !important;
-}
 .text-nowrap {
     white-space: nowrap;
-}
-
-.nav-tabs>li>a:hover{
-    cursor:pointer;
-}
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-    cursor:pointer;
-    padding:10px 25px;
-}
-
-
-a:focus, a:hover {
-    cursor:pointer;
-    text-decoration: none;
-}
-
-/*ng-cloak：*/
-/**解决ng-show隐藏的标签，很关键**/
-@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){
-     display: none !important;
 }
 /**模态框**/
 .modal-dialog {
@@ -51,31 +23,6 @@ a:focus, a:hover {
 .miadlog-small{
     width: 40%;
     margin:  auto;
-}
-
-/**子导航条样式**/
-.sub-nav-content {
-    height: 50px;
-    padding-top: 12.5px;
-    padding-bottom: 12.5px;
-}
-.sub-nav-default{
-    height: 25px;
-    width:72px;
-    border-bottom:1px solid #d6d6d6;
-    margin-right:10px;
-    cursor:pointer;
-    font: normal 12px  "微软雅黑";
-    background-color: #fafafa;
-    float:left;
-    text-align:center;
-    color:#333;
-    line-height:24px;
-    border-radius:2px;
-}
-.subnavactive{
-    border-bottom:1px solid #0093eb;
-    background-color: #f5f8fa;
 }
 
 /****btn****/
@@ -108,80 +55,11 @@ a:focus, a:hover {
     height:100%;
     overflow:hidden;
 }
-/**/
-/**右侧view样式start**/
-.view-page-header-breadcrumb {
-    margin-left: 15px;
-    width: calc(100% - 30px);
-    height: 50px;
-    border-bottom: 1px solid #e6e6e6;
-    padding-top: 7px;
-    padding-bottom: 7px;
-    padding-left: 0px;
-}
 
-.view-page-header-breadcrumb>div{
-    width: 10px;
-    height: 14px;
-    border-left: 2px solid #0088cc;
-    margin-top: 11px;
-}
-ul.breadcrumb {
-    padding-left: 0px;
-    background-color: #fff;
-    margin-bottom: 0px;
-    margin-left: 5px;
-}
-.disActiveFarther{
-    color: #333 !important;
-}
-
-.activeFarther{
-    color: #0093eb !important;
-}
-
-.margin-bottom-10{
-    margin-bottom: 10px;
-}
-
-.margin-top-14{
-    margin-top: 14px;
-}
-.second-leftbar{
-    background: #ffffff;
-}
-.reset-table-margin-bottom-7 {
-    margin-bottom: 0px;
-}
-.form-group-margin-top-24 {
-    margin-top: 24px;
-}
-.successbt{
-    display: none;
-    cursor: auto;
-    border: none;
-    background: #FFFFFF
-}
-
-.input-search{
-    width: 220px !important;
-}
 .visib-hidden{
     visibility: hidden;
 }
-.modal-header{
-   background-color: #ededed;
-    padding: 7px 15px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-.modal-header h4{
-    font-size: 14px;
 
-}
-.modal-footer{
-    padding: 7px 15px;
-}
 /*滚动条样式*/
 .scrollList {
     /*height: calc(100% - 0.45rem);*/

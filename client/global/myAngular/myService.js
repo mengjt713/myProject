@@ -1,57 +1,4 @@
 define(['app'],function(myApp){
-
-
-	
-	/**
-	 * 消息服务：系统内统一
-	 */
-	myApp.factory('msgService', function ($rootScope) {
-		var _showPromt = function(){
-            $("#promt-modal").css('z-index',9999);
-			$("#promt-modal").modal("show");
-		};
-
-		var _showConfirm = function(){
-            $("#confirm-modal").css('z-index',9999);
-			$("#confirm-modal").modal("show");
-		};
-
-        /**
-		 * 提示消息框
-         * @param msg 消息
-         */
-		var _promt = function(msg){
-            $rootScope.promtMsg = msg ? msg : "";
-            if(!$rootScope.$$phase) {
-                $rootScope.$digest();
-            }
-            _showPromt();
-		};
-
-        /**
-		 * 确认消息框
-         * @param msg 消息
-         * @param callBack 回调函数
-         */
-		var _confirm = function(msg, callBack){
-            if(!$rootScope.confirmMsg){
-                $rootScope.confirmMsg = {};
-            }
-            $rootScope.confirmMsg.header = msg.header ? msg.header : "未配置消息标题";
-            $rootScope.confirmMsg.body = msg.body ? msg.body : "未配置消息体";
-            if(callBack && angular.isFunction(callBack)){
-                $("#confirm-modal button.callback").unbind().bind("click", function(){
-                    callBack();
-                });
-            }
-            _showConfirm();
-		};
-		return {
-			promt : _promt,
-			confirm: _confirm
-		}
-	});
-	
 	/**
 	 * 请求返回码处理service
 	 */
@@ -63,15 +10,9 @@ define(['app'],function(myApp){
 				}
 				
 				if(code === "000000"){//0000000返回true
+                    console.log("数据返回正常");
 					return true
-				}else if(code === "100003"){
-                    $("#messageShow").css('z-index',9999);
-                    //$("#confirm-modal").modal("show");
-                    $('#messageShow').modal("show");
-                    //localStorage.removeItem("uvcm_token");
-                    //$location.path("/login");
-                    return true;
-                }
+				}
 				return false;
 			}
 		};

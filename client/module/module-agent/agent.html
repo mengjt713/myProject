@@ -69,10 +69,10 @@
                 </div>
                 <div class="down_info">
                     <div class="os_resource">
-                        <a href="#" class="addButton" ng-click="addResource()">+</a>
+                        <a href="#" class="addButton" ng-click="osHandle.addResource()">+</a>
                         <div class="os_list" ng-repeat="osName in osItem.resources">
                             <span>{{osName}}</span>
-                            <img src="client/global/img/agent/deleteBtn.png">
+                            <img src="client/global/img/agent/deleteBtn.png"  ng-click="osHandle.deleteOs(osItem,$index)">
                         </div>
                     </div>
                     <div class="os_deny_state" ng-show="osItem.status =='building'">
@@ -85,6 +85,27 @@
             </div>
         </div>
     </div>
+
+    <!--模态框-->
+    <div class="myModal" id="myModal">
+        <div class="modal-content">
+            <div class="modal-dialog">
+                <div class="modal-header">
+                    <span class="modal-title" >separate multiple resource name with commas</span>
+                    <img  ng-click="osHandle.close()" src="client/global/img/agent/close.png">
+                </div>
+                <div class="modal-body">
+                    <input  type="text" autocomplete="off" class="form-control" ng-model="osHandle.reSource" placeholder="input value" />
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="addButton add_resouce" ng-click="addResource()">Add Resource</a>
+                    <a href="#" class="addButton cancel" ng-click="osHandle.close()">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="popWindowBg"></div>
+
 </div>
 
 
