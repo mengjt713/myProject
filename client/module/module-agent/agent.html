@@ -41,7 +41,7 @@
     <div class="agentTable scrollList">
         <div class="agentInfo" ng-repeat="osItem in osHandle.osList track by osItem.id">
             <div class="os_ico">
-                <img style="vertical-align: middle;" src="{{'client/global/img/agent/' + osItem.os + '.png'}}">
+                <img style="vertical-align: middle;" ng-src= {{'client/global/img/agent/'+osItem.os+'.png'}}>
             </div>
             <div class="os_info">
                 <div class="up_info">
@@ -92,14 +92,14 @@
             <div class="modal-dialog">
                 <div class="modal-header">
                     <span class="modal-title" >separate multiple resource name with commas</span>
-                    <img  ng-click="osHandle.close()" src="client/global/img/agent/close.png">
+                    <img  ng-click="modal.close()" src="client/global/img/agent/close.png">
                 </div>
                 <div class="modal-body">
                     <input  type="text" autocomplete="off" class="form-control" ng-model="osHandle.reSource" placeholder="input value" />
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="addButton add_resouce" ng-click="osHandle.sourceSubmit()">Add Resource</a>
-                    <a href="#" class="addButton cancel" ng-click="osHandle.close()">Cancel</a>
+                    <a href="#" class="addButton cancel" ng-click="modal.close()">Cancel</a>
                 </div>
             </div>
         </div>

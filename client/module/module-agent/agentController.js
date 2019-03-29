@@ -49,32 +49,40 @@ define(["app"], function (myApp) {
                 //点击添加按钮弹出对话框
                 let that = this;
                 that.curSelectOs = item;
-                that.show();
+                $scope.modal.show();
             },
             sourceSubmit: function () {
                 //添加资源
-                if ($scope.osHandle.reSource) {
+                if ($scope.osHandle.reSource.length != 0) {
                     let newReSource = $scope.osHandle.reSource.split(",");
                     let i = getOsindex($scope.osHandle.curSelectOs);
                     $scope.osHandle.osList[i].resources.push(...newReSource);
-                    $scope.osHandle.close();
+                    $scope.modal.close();
+                }else {
+                    return;
                 }
             },
+
+
+        };
+        /*
+        * 模态框
+        * */
+        $scope.modal = {
             close: function () {
                 //关闭模态框
-                let that = this;
                 document.querySelector("#myModal").style.display = "none";
-                that.reSource = [];
+                $scope.osHandle.reSource = [];
             },
             show: function () {
                 //打开模态框
                 document.querySelector("#myModal").style.display = "block";
             }
-
-
-        };
+        }
         $scope.osHandle.getOsByType('all');
-
+        /*
+        * 工具函数，获取分类资源
+        * */
         function myFilter(list, type, value) {
             return list.filter(function (item) {
                 return item[type] == value
@@ -90,6 +98,5 @@ define(["app"], function (myApp) {
                 }
             }
         }
-
     })
 })

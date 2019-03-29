@@ -1,6 +1,6 @@
 const action = {};
 
-//引入login
+//引入agent模拟数据
 const agent = require('./action/action-agent/agent');
 
 
