@@ -54,7 +54,7 @@
                     <div class="os_state_build" >
                         <div ng-class="{true:'osStateIdle',false:'osStateBuild'}[osItem.status == 'idle']">{{osItem.status}}</div>
                     </div>
-                    <div class="os_ip">
+                    <div class="os_ip">osItem
                         <div class="os_name_ico">
                             <img style="vertical-align: middle;" width="16px" src="client/global/img/agent/ip.png">
                         </div>
@@ -69,7 +69,7 @@
                 </div>
                 <div class="down_info">
                     <div class="os_resource">
-                        <a href="#" class="addButton" ng-click="osHandle.addResource()">+</a>
+                        <a href="#" class="addButton" ng-click="osHandle.addResource(osItem)">+</a>
                         <div class="os_list" ng-repeat="osName in osItem.resources">
                             <span>{{osName}}</span>
                             <img src="client/global/img/agent/deleteBtn.png"  ng-click="osHandle.deleteOs(osItem,$index)">
@@ -98,14 +98,12 @@
                     <input  type="text" autocomplete="off" class="form-control" ng-model="osHandle.reSource" placeholder="input value" />
                 </div>
                 <div class="modal-footer">
-                    <a href="#" class="addButton add_resouce" ng-click="addResource()">Add Resource</a>
+                    <a href="#" class="addButton add_resouce" ng-click="osHandle.sourceSubmit()">Add Resource</a>
                     <a href="#" class="addButton cancel" ng-click="osHandle.close()">Cancel</a>
                 </div>
             </div>
         </div>
     </div>
-    <div id="popWindowBg"></div>
-
 </div>
 
 

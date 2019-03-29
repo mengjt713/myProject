@@ -8,6 +8,7 @@ define(["app"], function(myApp) {
             buildNum:0,
             idleNum:0,
             reSource:[],
+            curSelectOs:{},
             queryOs:function(type){
                 let that = this;
                 that.curSelectTab = type;
@@ -41,13 +42,27 @@ define(["app"], function(myApp) {
                 let osIndex = getOsindex(item);
                 that.osList[osIndex].resources.splice(ReIndex,1);
             },
-            addResource:function () {
-                document.querySelector("#myModal").style.display = "block";
+            addResource:function (item) {
+                let that = this;
+                that.curSelectOs = item;
+                that.show();
+
+            },
+            sourceSubmit:function(){
+                if($scope.osHandle.reSource){
+                   let newReSource = $scope.osHandle.reSource.split(",");
+                   let i = getOsindex($scope.osHandle.curSelectOs);
+                    $scope.osHandle.osList[i].resources.push(...newReSource);
+                    $scope.osHandle.close();
+                }
             },
             close:function(){
                 let that = this;
                 document.querySelector("#myModal").style.display = "none";
                 that.reSource = [];
+            },
+            show:function(){
+                document.querySelector("#myModal").style.display = "block";
             }
 
 
