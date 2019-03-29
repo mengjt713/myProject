@@ -42,7 +42,7 @@ define(["app"], function (myApp) {
             deleteOs: function (item, ReIndex) {
                 //删除资源
                 let that = this;
-                let osIndex = getOsindex(item);
+                let osIndex = getOsIndex(item);
                 that.osList[osIndex].resources.splice(ReIndex, 1);
             },
             addResource: function (item) {
@@ -55,10 +55,10 @@ define(["app"], function (myApp) {
                 //添加资源
                 if ($scope.osHandle.reSource.length != 0) {
                     let newReSource = $scope.osHandle.reSource.split(",");
-                    let i = getOsindex($scope.osHandle.curSelectOs);
-                    $scope.osHandle.osList[i].resources.push(...newReSource);
+                    let i = getOsIndex($scope.osHandle.curSelectOs);
+                    $scope.osHandle.osList[i].resources.push(...new Set(newReSource));//去重
                     $scope.modal.close();
-                }else {
+                } else {
                     return;
                 }
             },
@@ -66,8 +66,8 @@ define(["app"], function (myApp) {
 
         };
         /*
-        * 模态框
-        * */
+         * 模态框
+         * */
         $scope.modal = {
             close: function () {
                 //关闭模态框
@@ -78,20 +78,23 @@ define(["app"], function (myApp) {
                 //打开模态框
                 document.querySelector("#myModal").style.display = "block";
             }
-        }
+        };
+
         $scope.osHandle.getOsByType('all');
+
         /*
-        * 工具函数，获取分类资源
-        * */
+         * 工具函数，获取分类资源
+         * */
         function myFilter(list, type, value) {
             return list.filter(function (item) {
                 return item[type] == value
             })
         }
+
         /*
-        * 获取当前设备在设备列表中index
-        * */
-        function getOsindex(item) {
+         * 获取当前设备在设备列表中index
+         * */
+        function getOsIndex(item) {
             for (let i = 0; $scope.osHandle.osList.length; i++) {
                 if (item.id == $scope.osHandle.osList[i].id) {
                     return i;
