@@ -92,7 +92,7 @@ define(["app"], function (myApp) {
         }
 
         /*
-         * 获取当前设备在设备列表中index
+         * 工具函数，获取当前设备在设备列表中index
          * */
         function getOsIndex(item) {
             for (let i = 0; $scope.osHandle.osList.length; i++) {
