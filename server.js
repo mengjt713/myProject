@@ -9,13 +9,10 @@ const cruise = express();
 //引入原生模块path
 const path = require('path');
 
-//引入自定义文件类型模块
-const mime = require('./server/mime');
-
 //入口文件
 const entryHTML = '/client/global/index.html';
 
-//請求代理
+//请求代理
 const request = require('superagent');
 
 //basepath
@@ -44,8 +41,6 @@ const setting = {
 // }
 
 //设置中间件进行静态资源的本地读取并返回给客户端,包含html,js,css,img
-//use默认路径从根节点开始,这里设置虚拟访问目录为'/static'开头
-
 cruise.use('/client', express.static(__dirname + '/client'));
 
 
@@ -93,8 +88,7 @@ const dispatchAction = function (basepath) {
 
 dispatchAction(basepath);
 
-
 cruise.listen(setting.port, () => {
-    console.log('服务器启动成功，请访问localhost:'+setting.port+basepath);
+    console.log('服务器启动成功，请访问localhost:' + setting.port + basepath);
     console.log(setting.desc)
 })

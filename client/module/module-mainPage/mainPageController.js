@@ -1,8 +1,6 @@
 define(["app"], function (myApp) {
     myApp.register.controller('indexCtrl', function ($scope) {
-        /*
-         * 登出
-         * */
+
         $scope.logOut = function () {
         }
     });
